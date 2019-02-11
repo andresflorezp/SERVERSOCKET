@@ -1,4 +1,5 @@
 package org.edu.eci;
+
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -43,32 +44,38 @@ public class ServerWeb {
 				}
 
 				System.out.println(mensaje);
-				/*
-				 * out.println("HTTP/1.1 200 OK"); out.println("Content-Type: text/html" +
-				 * "\r\n"); out.println("<!DOCTYPE html>" + "\r\n"); out.println("<html>" +
-				 * "\r\n"); out.println("<head>" + "\r\n");
-				 * out.println("<meta charset=\"UTF-8\">" + "\r\n");
-				 * out.println("<title>Title of the document</title>" + "\r\n");
-				 * out.println("</head>" + "\r\n"); out.println("<body>" + "\r\n");
-				 * out.println("<h1>My Web Site</h1>" + "\r\n"); out.println("</body>" +
-				 * "\r\n"); out.println("</html>" + "\r\n");
-				 */
-				if (mensaje != null) {
-					System.out.println("HOLI ENTRE");
-					PrintWriter response = new PrintWriter(cliente.getOutputStream(), true);
-					response.println("HTTP/1.1 200 OK");
-					response.println("Content-Type: image/png");
-					response.println();
-					BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir"), "image.png"));
-					ImageIO.write(image, "png", cliente.getOutputStream());
-					out.close();
-					in.close();
-					cliente.close();
-					System.out.println("Cliente Desconectado");
-				}
-			}
 
-		} catch (IOException e) {
+				out.println("HTTP/1.1 200 OK");
+				out.println("Content-Type: text/html" + "\r\n");
+				out.println("<!DOCTYPE html>" + "\r\n");
+				out.println("<html>" + "\r\n");
+				out.println("<head>" + "\r\n");
+				out.println("<meta charset=\"UTF-8\">" + "\r\n");
+				out.println("<title>Title of the document</title>" + "\r\n");
+				out.println("</head>" + "\r\n");
+				out.println("<body>" + "\r\n");
+				out.println("<h1>My Web Site</h1>" + "\r\n");
+				out.println("</body>" + "\r\n");
+				out.println("</html>" + "\r\n");
+				
+				out.close();
+				in.close();
+				cliente.close();
+
+				/*
+				 * if (mensaje != null) { System.out.println("HOLI ENTRE"); PrintWriter response
+				 * = new PrintWriter(cliente.getOutputStream(), true);
+				 * response.println("HTTP/1.1 200 OK");
+				 * response.println("Content-Type: image/png"); response.println();
+				 * BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir"),
+				 * "image.png")); ImageIO.write(image, "png", cliente.getOutputStream());
+				 * out.close(); in.close(); cliente.close();
+				 * System.out.println("Cliente Desconectado"); } }
+				 */
+			}
+		}
+
+		catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
