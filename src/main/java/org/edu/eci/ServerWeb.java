@@ -57,10 +57,10 @@ public class ServerWeb {
 				out.println("<h1>My Web Site</h1>" + "\r\n");
 				out.println("</body>" + "\r\n");
 				out.println("</html>" + "\r\n");
-				
+				out.println();
 				out.close();
-				in.close();
 				cliente.close();
+				System.out.println("Cliente Desconectado");
 
 				/*
 				 * if (mensaje != null) { System.out.println("HOLI ENTRE"); PrintWriter response
