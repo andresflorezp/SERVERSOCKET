@@ -42,9 +42,12 @@ public class ServerWeb {
 						break;
 					}
 				}
-
+				
 				System.out.println(mensaje);
-
+				out.println("HTTP/1.1 200 OK");
+				out.println("Content-Type: text/html" + "\r\n");
+				out.println(LeerFichero.muestraContenido("index.html"));
+				/*
 				out.println("HTTP/1.1 200 OK");
 				out.println("Content-Type: text/html" + "\r\n");
 				out.println("<!DOCTYPE html>" + "\r\n");
@@ -57,6 +60,7 @@ public class ServerWeb {
 				out.println("<h1>My Web Site</h1>" + "\r\n");
 				out.println("</body>" + "\r\n");
 				out.println("</html>" + "\r\n");
+				*/
 				out.println();
 				out.close();
 				cliente.close();
