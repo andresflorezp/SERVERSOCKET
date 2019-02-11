@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/Server-1.0-SNAPSHOT-jar-with-dependencies.jar org.edu.eci.ServerkWeb
+web: java $JAVA_OPTS -cp target/Server-1.0-SNAPSHOT-jar-with-dependencies.jar org.edu.eci.ServerWeb
